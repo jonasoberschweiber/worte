@@ -6,6 +6,10 @@ module Worte
       def print(text, tokens, where=STDOUT)
         text.split("\n").each_with_index do |line, l|
           line_tokens = tokens.select { |t| t.position[0] == l }
+          if line_tokens.collect(&:correct).all?
+            next # Do not print lines without errors
+          end
+          where.print "#{l + 1}: "
           where.puts line
           col = 0
           line_tokens.each do |token|
