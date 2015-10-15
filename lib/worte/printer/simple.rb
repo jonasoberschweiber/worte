@@ -18,12 +18,16 @@ module Worte
                 where.print (' ' * (token.position[1] - col))
                 col = token.position[1]
               end
-              where.print '^' * token.word.length
+              where.print error_marker(token.word.length)
               col += token.word.length
             end
           end
           where.puts
         end
+      end
+
+      def error_marker(length)
+        '^' * length
       end
     end
   end
