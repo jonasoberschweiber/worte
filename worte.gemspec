@@ -18,4 +18,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.name = "worte"
   gem.version = Worte::VERSION
+
+  gem.add_runtime_dependency "ffi-aspell", ["~> 1.1.0"]
 end
