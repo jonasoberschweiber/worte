@@ -12,6 +12,7 @@ module Worte
           where.print "#{l + 1}: "
           where.puts line
           col = 0
+          where.print ' ' * ((l + 1).to_s.length + 2)
           line_tokens.each do |token|
             if !token.correct
               if col != token.position[1]
