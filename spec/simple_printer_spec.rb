@@ -35,6 +35,6 @@ lectus, a accumsan ante mi ut neque. Integer vitae posuere nisl.
     tokens = Worte::Tokenizer.new.tokenize(sample)
     tokens[3].correct = false
     pr.print(sample, tokens, o)
-    expect(o.string.split("\n")[1]).to start_with('          ^^^^^^')
+    expect(o.string.split("\n")[1]).to start_with('             ^^^^^^')
   end
 end

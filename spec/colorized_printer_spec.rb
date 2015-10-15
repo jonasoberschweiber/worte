@@ -8,6 +8,6 @@ describe Worte::Printer::Colorized do
     tokens = Worte::Tokenizer.new.tokenize(sample)
     tokens[3].correct = false
     pr.print(sample, tokens, o)
-    expect(o.string.split("\n")[1]).to start_with("          \e[31m^^^^^^\e[0m")
+    expect(o.string.split("\n")[1]).to start_with("             \e[31m^^^^^^\e[0m")
   end
 end
