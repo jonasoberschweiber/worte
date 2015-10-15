@@ -1,5 +1,7 @@
 # worte - A simple Ruby spell checker
 
+[![Build Status](https://travis-ci.org/jonasoberschweiber/worte.svg?branch=master)](https://travis-ci.org/jonasoberschweiber/worte)
+
 Worte is a simple spell checker based on [ffi-aspell](https://github.com/YorickPeterse/ffi-aspell).
 It tokenizes strings, spell checks the tokens and can then print out the lines
 of the original text containing spelling mistakes.
