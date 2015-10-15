@@ -1,7 +1,7 @@
 require File.expand_path('../lib/worte/version', __FILE__)
 
 ignored_files = [".travis.yml", ".gitignore"]
-ignored_files.flatten!.uniq!
+ignored_files.uniq!
 
 ignored_test_files = []
 
