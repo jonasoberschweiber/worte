@@ -25,6 +25,30 @@ describe Worte::Filter::Markdown do
     expect(t).to eq('Test   test   test')
   end
 
+  it "filters out multiline underline emphasis" do
+    f = Worte::Filter::Markdown.new
+    t = f.filter("Test _test test\nTest123_ Test")
+    expect(t).to eq("Test  test test\nTest123  Test")
+  end
+
+  it "filters out multiline underline bold" do
+    f = Worte::Filter::Markdown.new
+    t = f.filter("Test __test test\nTest123__ Test")
+    expect(t).to eq("Test   test test\nTest123   Test")
+  end
+
+  it "filters out multiline star emphasis" do
+    f = Worte::Filter::Markdown.new
+    t = f.filter("Test *test test\nTest123* Test")
+    expect(t).to eq("Test  test test\nTest123  Test")
+  end
+
+  it "filters out multiline star bold" do
+    f = Worte::Filter::Markdown.new
+    t = f.filter("Test **test test\nTest123** Test")
+    expect(t).to eq("Test   test test\nTest123   Test")
+  end
+
   it "filters heading marks" do
     f = Worte::Filter::Markdown.new
     t = f.filter('### Test')
